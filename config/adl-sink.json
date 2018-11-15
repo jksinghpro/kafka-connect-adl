@@ -1,0 +1,17 @@
+{"name":"adl-kafka",
+  "config":{
+    "adl.data.lake.name":"<<DATA LAKE NAME>>.azuredatalakestore.net",
+    "adl.client.id":"<< AZURE ACTIVE DIRECTORY CLIENT ID >>",
+    "adl.client.secret":"<< AZURE ACTIVE DIRECTORY APP KEY >>",
+    "adl.token.endpoint":"<< AZURE ACTIVE DIRECTORY TOKEN ENDPOINT >>",
+    "connector.class":"jk.bigdata.tech.AdlSinkConnector",
+    "tasks.max":1,
+    "topics":"datalake.login",
+    "flush.size":3,
+    "storage.class":"jk.bigdata.tech.storage.AdlStorage",
+    "format.class":"jk.bigdata.tech.format.avro.AvroFormat",
+    "schema.generator.class":"io.confluent.connect.storage.hive.schema.DefaultSchemaGenerator",
+    "partitioner.class":"io.confluent.connect.storage.partitioner.DefaultPartitioner",
+    "schema.compatibility":"NONE"
+  }
+}
